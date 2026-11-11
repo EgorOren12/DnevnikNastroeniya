@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using DnevnikNastroeniya.Data;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +17,12 @@ namespace DnevnikNastroeniya
     /// </summary>
     public partial class MainWindow : Window
     {
+        private AppDbContext _context;
         public MainWindow()
         {
             InitializeComponent();
+            _context = new AppDbContext();
+            _context.Database.EnsureCreated();
         }
     }
 }

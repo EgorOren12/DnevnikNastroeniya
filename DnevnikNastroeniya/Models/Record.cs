@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DnevnikNastroeniya.Models
 {
-    internal class Note
+    internal class Record
     {
         public int Id { get; set; }
         public DateTime CreationDate { get; set; }
@@ -13,11 +13,8 @@ namespace DnevnikNastroeniya.Models
         public int Mood_Level { get; set; }
         public string Comment { get; set; }
         public DateTime DateOfCreationNote { get; set; }
-
         public int IdClient { get; set; }
         public int IdScale { get; set; }
-
-
         [ForeignKey(nameof(IdClient))]
         public Client? Client { get; set; }
 

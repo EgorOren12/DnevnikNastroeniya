@@ -17,6 +17,6 @@ namespace DnevnikNastroeniya.Models
         public int IdNote { get; set; }
 
         [ForeignKey(nameof(IdNote))]
-        public Note? Note { get; set; }
+        public Record? Note { get; set; }
     }
 }

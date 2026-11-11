@@ -8,6 +8,6 @@ namespace DnevnikNastroeniya.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Note> Notes { get; set; } = new();
+        public List<Record> Notes { get; set; } = new();
     }
 }
