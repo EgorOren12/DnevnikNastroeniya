@@ -1,0 +1,94 @@
+﻿<Window x:Class="DnevnikNastroeniya.Windows.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DnevnikNastroeniya.Windows"
+        mc:Ignorable="d"
+                Title="Регистрация" Height="500" Width="350"
+        MinHeight="500" MaxHeight="500"
+        MinWidth="350" MaxWidth="350"
+        >
+    <Grid Margin="20">
+        <StackPanel VerticalAlignment="Center">
+
+            <TextBlock Text="Регистрация" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       HorizontalAlignment="Center" 
+                       Margin="0,0,0,30" 
+                       Foreground="#333"/>
+
+            <TextBlock Text="Логин:" 
+                       Margin="0,0,0,5" 
+                       FontWeight="SemiBold"/>
+            <TextBox x:Name="TxtLogin" 
+                     Height="35" 
+                     Padding="5" 
+                     FontSize="14" 
+                     VerticalContentAlignment="Center" 
+                     Margin="0,0,0,10"/>
+
+            <TextBlock Text="Пароль:" 
+                       Margin="0,0,0,5" 
+                       FontWeight="SemiBold"/>
+            <PasswordBox x:Name="TxtPassword" 
+                         Height="35" 
+                         Padding="5" 
+                         FontSize="14" 
+                         VerticalContentAlignment="Center" 
+                         Margin="0,0,0,10"/>
+
+            <TextBlock Text="Повтор пароля:" 
+                       Margin="0,0,0,5" 
+                       FontWeight="SemiBold"/>
+            <PasswordBox x:Name="TxtPassword2" 
+                         Height="35" 
+                         Padding="5" 
+                         FontSize="14" 
+                         VerticalContentAlignment="Center" 
+                         Margin="0,0,0,10"/>
+
+            <TextBlock Text="ФИО:" 
+                       Margin="0,0,0,5" 
+                       FontWeight="SemiBold"/>
+            <TextBox x:Name="TxtFOI" 
+                     Height="35" 
+                     Padding="5" 
+                     FontSize="14" 
+                     VerticalContentAlignment="Center" 
+                     Margin="0,0,0,25"/>
+
+            <Button x:Name="BtnLogin" 
+                    Content="Зарегистриров" 
+                    Height="40" 
+                    FontSize="16" 
+                    Background="#9ed883" 
+                    Foreground="White">
+
+            </Button>
+
+            <Grid Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Есть аккаунт? "
+                           Grid.Column="0" 
+                           HorizontalAlignment="Right"/>
+
+                <TextBlock Text="Войдите"
+                           Grid.Column="1" 
+                           MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"
+                           HorizontalAlignment="Left"
+                           Foreground="#6aa84d" 
+                           TextDecorations="Underline" 
+                           FontWeight="Bold"
+                           
+                           />
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</Window>
