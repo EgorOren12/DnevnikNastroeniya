@@ -41,6 +41,7 @@
 
             <Button x:Name="BtnLogin" 
                     Content="Войти" 
+                    Click="BtnLogin_Click"
                     Height="40" 
                     FontSize="16" 
                     Background="#9ed883" 
@@ -69,6 +70,8 @@
                            TextDecorations="Underline" 
                            FontWeight="Bold"
                            VerticalAlignment="Top"
+                           MouseEnter="RegistrationTextBlock_MouseEnter"
+                           MouseLeave="RegistrationTextBlock_MouseLeave"
                            />
             </Grid>
             

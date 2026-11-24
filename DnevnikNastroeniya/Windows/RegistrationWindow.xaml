@@ -59,8 +59,9 @@
                      VerticalContentAlignment="Center" 
                      Margin="0,0,0,25"/>
 
-            <Button x:Name="BtnLogin" 
-                    Content="Зарегистриров" 
+            <Button x:Name="BtnRegister" 
+                    Click="BtnRegister_Click"
+                    Content="Зарегистриров"
                     Height="40" 
                     FontSize="16" 
                     Background="#9ed883" 
@@ -78,14 +79,16 @@
                            Grid.Column="0" 
                            HorizontalAlignment="Right"/>
 
-                <TextBlock Text="Войдите"
+                <TextBlock Name="EnterText"
+                    Text="Войдите"
                            Grid.Column="1" 
                            MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"
                            HorizontalAlignment="Left"
                            Foreground="#6aa84d" 
                            TextDecorations="Underline" 
                            FontWeight="Bold"
-                           
+                           MouseEnter="EnterText_MouseEnter"
+                           MouseLeave="EnterText_MouseLeave"
                            />
             </Grid>
 

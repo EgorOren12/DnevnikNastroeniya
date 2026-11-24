@@ -1,0 +1,167 @@
+﻿<Window x:Class="DnevnikNastroeniya.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Дневник Настроения" Height="600" Width="900"
+        WindowStartupLocation="CenterScreen"
+        Background="#F0F4F8">
+    
+    <Window.Resources>
+        <DataTemplate x:Key="TabHeaderTemplate">
+            <Border BorderBrush="LightGreen" 
+                    BorderThickness="2" 
+                    CornerRadius="5" 
+                    Padding="15,5" 
+                    Background="LightGreen">
+                <TextBlock Text="{Binding}" 
+                           Foreground="#2C3E50" 
+                           FontWeight="Bold" 
+                           FontSize="14"/>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#2C3E50" Padding="15,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Дневник Настроения" 
+                           Foreground="White" 
+                           FontSize="20" 
+                           FontWeight="Bold" 
+                           VerticalAlignment="Center"/>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Text="Иван Иванов | " 
+                               Foreground="#BDC3C7" 
+                               VerticalAlignment="Center"/>
+                    <Button Content="Выйти" 
+                            Background="#E74C3C" 
+                            Foreground="White" 
+                            BorderThickness="0" 
+                            Padding="10,5" 
+                            Cursor="Hand"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <TabControl Grid.Row="1" Margin="10" 
+                    Background="White" 
+                    BorderBrush="#DCDDE1">
+
+            <TabItem Header="Главная" 
+                     HeaderTemplate="{StaticResource TabHeaderTemplate}"
+                     Padding="0"
+                     >
+                <Grid Margin="20">
+                    <StackPanel>
+                        <TextBlock Text="Привет! Как твое настроение?" 
+                                   FontSize="24" 
+                                   FontWeight="Bold" 
+                                   Foreground="#2C3E50" 
+                                   Margin="0,0,0,20"/>
+
+                        <Border Background="#F8F9FA" 
+                                BorderBrush="#E2E8F0" 
+                                BorderThickness="1"
+                                CornerRadius="5"
+                                Padding="15" 
+                                Margin="0,0,0,20">
+                            <StackPanel>
+                                <TextBlock Text="Последняя запись:" 
+                                           FontSize="14" 
+                                           FontWeight="SemiBold" 
+                                           Foreground="#7F8C8D" 
+                                           Margin="0,0,0,5"/>
+                                <TextBlock Text="Отличный день!" 
+                                           FontSize="18" 
+                                           FontWeight="Bold" 
+                                           Foreground="#2C3E50" 
+                                           Margin="0,0,0,5"/>
+                                <TextBlock Text="Настроение: 8/10" 
+                                           Foreground="#27AE60" 
+                                           FontWeight="Bold" 
+                                           Margin="0,0,0,10"/>
+                                <TextBlock Text="Сегодня была хорошая прогулка, погода супер, много гулял." 
+                                           TextWrapping="Wrap" 
+                                           Foreground="#34495E"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Button Content="+ Добавить новую запись" 
+                                Width="200" 
+                                Height="40" 
+                                HorizontalAlignment="Left" 
+                                Background="#9ed883" 
+                                Foreground="White" 
+                                BorderThickness="0" 
+                                FontWeight="Bold" 
+                                Cursor="Hand"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Все записи" 
+                     HeaderTemplate="{StaticResource TabHeaderTemplate}"
+                     Padding="0">
+                <Grid Margin="20">
+                    <StackPanel>
+                        <TextBlock Text="История записей" 
+                                   FontSize="24" 
+                                   FontWeight="Bold" 
+                                   Foreground="#2C3E50" 
+                                   Margin="0,0,0,20"/>
+
+                        <ListBox Height="300" 
+                                 BorderBrush="#DCDDE1" 
+                                 BorderThickness="1">
+                            <ListBoxItem Padding="10" 
+                                         BorderBrush="#EEE" 
+                                         BorderThickness="0,0,0,1">
+                                <StackPanel>
+                                    <TextBlock Text="24.10.2026 - Отличный день!" 
+                                               FontWeight="Bold"/>
+                                    <TextBlock Text="Настроение: 8/10" 
+                                               Foreground="#27AE60"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem Padding="10" 
+                                         BorderBrush="#EEE" 
+                                         BorderThickness="0,0,0,1">
+                                <StackPanel>
+                                    <TextBlock Text="23.10.2026 - Устал немного" 
+                                               FontWeight="Bold"/>
+                                    <TextBlock Text="Настроение: 5/10" 
+                                               Foreground="#F39C12"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Статистика" 
+                     HeaderTemplate="{StaticResource TabHeaderTemplate}"
+                     Padding="0">
+                <Grid Margin="20">
+                    <StackPanel>
+                        <TextBlock Text="Статистика настроения" 
+                                   FontSize="24" 
+                                   FontWeight="Bold" 
+                                   Foreground="#2C3E50" 
+                                   Margin="0,0,0,20"/>
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>

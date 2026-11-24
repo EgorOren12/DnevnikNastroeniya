@@ -1,4 +1,5 @@
 ﻿using DnevnikNastroeniya.Data;
+using DnevnikNastroeniya.Helpers;
 using DnevnikNastroeniya.Interfaces;
 using DnevnikNastroeniya.Windows;
 using System.Text;
@@ -38,7 +39,60 @@ namespace DnevnikNastroeniya
         {
             ToWindow();
         }
+
+        private void RegistrationTextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            RegistrationTextBlock.FontWeight = FontWeights.ExtraBold;
+        }
+
+        private void RegistrationTextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            RegistrationTextBlock.FontWeight = FontWeights.Bold;
+        }
+
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            string login = TxtLogin.Text.Trim();
+            string pass = TxtPassword.Password;
+
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(pass))
+            {
+                MessageBox.Show("Введите логин и пароль!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            try
+            {
+                var client = _context.Clients.FirstOrDefault(c => c.Login == login);
+
+                if (client == null)
+                {
+                    MessageBox.Show("Пользователь не найден.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                string enteredHash = PasswordHelper.HashPassword(pass);
+                if (client.Password == enteredHash)
+                {
+                    MessageBox.Show("Успешный вход!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MainWindow mainwindow = new MainWindow();
+                    mainwindow.Show();
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    TxtPassword.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка Базы ДанныхД: " + ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
+    
 
 
 }
