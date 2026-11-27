@@ -21,5 +21,12 @@ namespace DnevnikNastroeniya.Windows
         {
             InitializeComponent();
         }
+
+
+        private void OnAddRecordClick(object sender, RoutedEventArgs e)
+        {
+            AddRecordWindow addRecordWindow = new AddRecordWindow();
+            addRecordWindow.Show();
+        }
     }
 }
