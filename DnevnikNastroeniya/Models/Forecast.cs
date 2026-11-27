@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DnevnikNastroeniya.Models
 {
-    internal class Forecast
+    public class Forecast
     {
         public int Id { get; set; }
         public DateTime Target_Date { get; set; }

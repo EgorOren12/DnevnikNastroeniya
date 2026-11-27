@@ -75,6 +75,8 @@ namespace DnevnikNastroeniya
                 if (client.Password == enteredHash)
                 {
                     MessageBox.Show("Успешный вход!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    AppState.CurrentClientId = client.Id;
+                    AppState.CurrentUserName = client.FIO;
                     MainWindow mainwindow = new MainWindow();
                     mainwindow.Show();
 

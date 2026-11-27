@@ -1,4 +1,8 @@
-﻿using System;
+﻿using DnevnikNastroeniya.Commands;
+using DnevnikNastroeniya.Data;
+using DnevnikNastroeniya.Helpers;
+using DnevnikNastroeniya.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -17,9 +21,11 @@ namespace DnevnikNastroeniya.Windows
     /// </summary>
     public partial class AddRecordWindow : Window
     {
+
         public AddRecordWindow()
         {
             InitializeComponent();
         }
     }
 }
+

@@ -8,6 +8,7 @@
         Title="Авторизация" Height="370" Width="300"
         MinHeight="370" MaxHeight="370"
         MinWidth="300" MaxWidth="300"
+        WindowStartupLocation="CenterScreen"
         >
     <Grid Margin="20">
         <StackPanel VerticalAlignment="Center">

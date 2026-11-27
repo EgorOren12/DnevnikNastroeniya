@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DnevnikNastroeniya.Models
 {
-    internal class Record
+    public class Record
     {
         public int Id { get; set; }
         public DateTime CreationDate { get; set; }

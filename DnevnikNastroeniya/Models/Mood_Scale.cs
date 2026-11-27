@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DnevnikNastroeniya.Models
 {
-    internal class Mood_Scale
+    public class Mood_Scale
     {
         public int Id { get; set; }
         public string Name { get; set; }

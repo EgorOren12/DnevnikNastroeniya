@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DnevnikNastroeniya.Models
 {
-    internal class Client
+    public class Client
     {
         public int Id { get; set; }
         public string FIO { get; set; }

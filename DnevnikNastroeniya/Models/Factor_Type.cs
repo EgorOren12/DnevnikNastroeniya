@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DnevnikNastroeniya.Models
 {
-    internal class Factor_Type 
+    public class Factor_Type 
     {
         public int Id { get; set; }
         public string Name { get; set; }
